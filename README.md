@@ -366,8 +366,6 @@ go build -o codex-mcp-go cmd/server/main.go
 
 本项目采用 [MIT License](LICENSE) 开源协议。
 
-Copyright (c) 2025 [guda.studio](mailto:gudaclaude@gmail.com)
-
 ---
 
 ## 十、致谢
