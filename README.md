@@ -1,4 +1,4 @@
-# Codex4KiloMCP
+# codex-mcp-go
 
 <div align="center">
 
@@ -12,14 +12,14 @@
 
 ## 一、项目简介
 
-Codex4KiloMCP 是一个基于 Go 语言实现的 MCP (Model Context Protocol) 服务器，作为 Codex CLI 的桥梁，让各种 AI 编程助手（如 Claude Code、Roo Code、KiloCode 等）能够与 Codex 无缝协作。
+codex-mcp-go 是一个基于 Go 语言实现的 MCP (Model Context Protocol) 服务器，作为 Codex CLI 的桥梁，让各种 AI 编程助手（如 Claude Code、Roo Code、KiloCode 等）能够与 Codex 无缝协作。
 
 在当前 AI 辅助编程生态中：
 - **AI 编程助手**（Claude Code/Roo Code/KiloCode）：负责架构设计、需求分析、代码重构
 - **Codex**：负责代码生成、bug 定位、代码审查
-- **Codex4KiloMCP**：管理会话上下文，支持多轮对话与并行任务
+- **codex-mcp-go**：管理会话上下文，支持多轮对话与并行任务
 
-相比官方 Codex MCP 实现，Codex4KiloMCP 引入了**会话持久化**、**并行执行**和**推理追踪**等企业级特性。
+相比官方 Codex MCP 实现，codex-mcp-go 引入了**会话持久化**、**并行执行**和**推理追踪**等企业级特性。
 
 ---
 
@@ -57,7 +57,7 @@ go build -o codex-mcp-go cmd/server/main.go
 # 移除官方 Codex MCP（如果已安装）
 claude mcp remove codex
 
-# 添加 Codex4KiloMCP
+# 添加 codex-mcp-go
 claude mcp add codex -s user --transport stdio -- /path/to/codex-mcp-go
 ```
 
@@ -300,10 +300,10 @@ echo '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' | /path/to/cod
 
 ```bash
 # 设置日志级别
-export CODEX4KILOMCP_LOG_LEVEL=debug
+export CODEX_MCP_GO_LOG_LEVEL=debug
 
 # 设置超时时间（秒）
-export CODEX4KILOMCP_TIMEOUT=300
+export CODEX_MCP_GO_TIMEOUT=300
 ```
 
 ### 配置文件示例

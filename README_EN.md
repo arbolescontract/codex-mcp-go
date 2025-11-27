@@ -1,4 +1,4 @@
-# Codex4KiloMCP
+# codex-mcp-go
 
 <div align="center">
 
@@ -12,14 +12,14 @@
 
 ## 1. Project Overview
 
-Codex4KiloMCP is a Go-based MCP (Model Context Protocol) server that serves as a bridge for Codex CLI, enabling various AI coding assistants (such as Claude Code, Roo Code, KiloCode, etc.) to seamlessly collaborate with Codex.
+codex-mcp-go is a Go-based MCP (Model Context Protocol) server that serves as a bridge for Codex CLI, enabling various AI coding assistants (such as Claude Code, Roo Code, KiloCode, etc.) to seamlessly collaborate with Codex.
 
 In the current AI-assisted programming ecosystem:
 - **AI Coding Assistants** (Claude Code/Roo Code/KiloCode): Handle architecture design, requirement analysis, and code refactoring
 - **Codex**: Handles code generation, bug fixing, and code review
-- **Codex4KiloMCP**: Manages session context, supporting multi-turn conversations and parallel tasks
+- **codex-mcp-go**: Manages session context, supporting multi-turn conversations and parallel tasks
 
-Compared to the official Codex MCP implementation, Codex4KiloMCP introduces **enterprise-grade features** such as **session persistence**, **parallel execution**, and **reasoning trace**.
+Compared to the official Codex MCP implementation, codex-mcp-go introduces **enterprise-grade features** such as **session persistence**, **parallel execution**, and **reasoning trace**.
 
 ---
 
@@ -57,7 +57,7 @@ Choose the configuration method based on your AI client:
 # Remove official Codex MCP (if installed)
 claude mcp remove codex
 
-# Add Codex4KiloMCP
+# Add codex-mcp-go
 claude mcp add codex -s user --transport stdio -- /path/to/codex-mcp-go
 ```
 
@@ -300,10 +300,10 @@ Second turn (using returned SESSION_ID):
 
 ```bash
 # Set log level
-export CODEX4KILOMCP_LOG_LEVEL=debug
+export CODEX_MCP_GO_LOG_LEVEL=debug
 
 # Set timeout (seconds)
-export CODEX4KILOMCP_TIMEOUT=300
+export CODEX_MCP_GO_TIMEOUT=300
 ```
 
 ### Configuration File Example
