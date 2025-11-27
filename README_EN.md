@@ -40,13 +40,13 @@ go build -o codex-mcp-go cmd/server/main.go
 
 ### 2. Configure MCP Client
 
-Choose the configuration method based on your AI client. Replace `/path/to/codex-mcp-go` with the actual absolute path.
+Choose the configuration method based on your AI client.
 
 <details>
 <summary><strong>Claude Code</strong></summary>
 
 ```bash
-claude mcp add codex -s user --transport stdio -- /path/to/codex-mcp-go
+claude mcp add codex -s user --transport stdio -- npx -y @zenfun510/codex-mcp-go
 ```
 </details>
 
@@ -59,8 +59,8 @@ Add to Roo Code's MCP settings:
 {
   "mcpServers": {
     "codex": {
-      "command": "/path/to/codex-mcp-go",
-      "args": [],
+      "command": "npx",
+      "args": ["-y", "@zenfun510/codex-mcp-go"],
       "env": {}
     }
   }
@@ -81,8 +81,8 @@ Add to `~/.kilocode/mcp.json`:
 {
   "mcpServers": {
     "codex": {
-      "command": "/path/to/codex-mcp-go",
-      "args": [],
+      "command": "npx",
+      "args": ["-y", "@zenfun510/codex-mcp-go"],
       "env": {}
     }
   }
@@ -98,7 +98,8 @@ Add to `~/.kilocode/mcp.json`:
 3. Fill in the configuration:
    - Name: `codex`
    - Type: `stdio`
-   - Command: `/path/to/codex-mcp-go`
+   - Command: `npx`
+   - Args: `-y @zenfun510/codex-mcp-go`
 </details>
 
 <details>
@@ -110,8 +111,8 @@ For other MCP-compatible clients:
 {
   "mcpServers": {
     "codex": {
-      "command": "/path/to/codex-mcp-go",
-      "args": [],
+      "command": "npx",
+      "args": ["-y", "@zenfun510/codex-mcp-go"],
       "env": {}
     }
   }

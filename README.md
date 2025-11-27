@@ -35,7 +35,7 @@
 无需安装 Go 环境，直接运行：
 
 ```bash
-npx @w31r4/codex-mcp-go
+npx @zenfun510/codex-mcp-go
 ```
 
 #### 方式二：手动下载
@@ -60,7 +60,7 @@ go build -o codex-mcp-go cmd/server/main.go
 <summary><strong>Claude Code</strong></summary>
 
 ```bash
-claude mcp add codex -s user --transport stdio -- npx -y @w31r4/codex-mcp-go
+claude mcp add codex -s user --transport stdio -- npx -y @zenfun510/codex-mcp-go
 ```
 </details>
 
@@ -74,7 +74,7 @@ claude mcp add codex -s user --transport stdio -- npx -y @w31r4/codex-mcp-go
   "mcpServers": {
     "codex": {
       "command": "npx",
-      "args": ["-y", "@w31r4/codex-mcp-go"],
+      "args": ["-y", "@zenfun510/codex-mcp-go"],
       "env": {
         "OPENAI_API_KEY": "your-api-key"
       }
@@ -98,7 +98,7 @@ claude mcp add codex -s user --transport stdio -- npx -y @w31r4/codex-mcp-go
   "mcpServers": {
     "codex": {
       "command": "npx",
-      "args": ["-y", "@w31r4/codex-mcp-go"],
+      "args": ["-y", "@zenfun510/codex-mcp-go"],
       "env": {
         "OPENAI_API_KEY": "your-api-key"
       }
@@ -117,7 +117,7 @@ claude mcp add codex -s user --transport stdio -- npx -y @w31r4/codex-mcp-go
    - Name: `codex`
    - Type: `stdio`
    - Command: `npx`
-   - Args: `-y @w31r4/codex-mcp-go`
+   - Args: `-y @zenfun510/codex-mcp-go`
 </details>
 
 <details>
@@ -130,7 +130,7 @@ claude mcp add codex -s user --transport stdio -- npx -y @w31r4/codex-mcp-go
   "mcpServers": {
     "codex": {
       "command": "npx",
-      "args": ["-y", "@w31r4/codex-mcp-go"],
+      "args": ["-y", "@zenfun510/codex-mcp-go"],
       "env": {
         "OPENAI_API_KEY": "your-api-key"
       }
