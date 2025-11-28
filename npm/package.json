@@ -1,6 +1,7 @@
 {
   "name": "@zenfun510/codex-mcp-go",
-  "version": "0.0.2",
+  "version": "0.0.3",  
+  "mcpName": "io.github.w31r4/codex-mcp-go", 
   "description": "NPM wrapper for codex-mcp-go",
   "bin": {
     "codex-mcp-go": "bin.js"
@@ -23,8 +24,8 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "axios": "^1.6.0",
-    "tar": "^6.2.0",
-    "unzipper": "^0.10.0"
+    "axios": "^1.7.9",
+    "tar": "^7.4.3",
+    "unzipper": "^0.12.3"
   }
 }
