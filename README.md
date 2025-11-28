@@ -29,7 +29,21 @@ codex 在细节和 bug 修复方面的能力有目共睹, 但是很多时候用�
 
 ## 快速开始
 
-### 1. 安装
+### 1. 前置要求
+
+本工具依赖 OpenAI 的 `codex` CLI。请确保您已安装并配置好它。
+
+**安装 Codex CLI:**
+
+```bash
+# 使用 npm 安装 (推荐)
+npm i -g @openai/codex
+
+# 或者参考官方仓库
+# https://github.com/openai/codex-cli
+```
+
+### 2. 安装 MCP Server
 
 #### 方式一：使用 npx (推荐)
 
@@ -53,7 +67,7 @@ cd codex-mcp-go
 go build -o codex-mcp-go cmd/server/main.go
 ```
 
-### 2. 配置 MCP 客户端
+### 3. 配置 MCP 客户端
 
 根据您使用的 AI 客户端，选择对应的配置方式。
 
@@ -141,7 +155,7 @@ claude mcp add codex -s user --transport stdio -- npx -y @zenfun510/codex-mcp-go
 ```
 </details>
 
-### 3. 验证
+### 4. 验证
 
 ```bash
 echo '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' | ./codex-mcp-go
@@ -169,7 +183,19 @@ echo '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' | ./codex-mcp-
 
 ---
 
-## 版本对比 (Go vs Python)
+## 功能对比
+
+### 1. 与官方 Codex CLI 对比
+
+| 特性 | 官方 Codex CLI | CodexMCP (本工具) |
+|------|----------------|-------------------|
+| **基本 Codex 调用** | ✅ | ✅ |
+| **多轮对话** | ❌ | ✅ (通过 Session 管理) |
+| **推理详情追踪** | ❌ | ✅ (完整日志捕获) |
+| **并行任务支持** | ❌ | ✅ (MCP 协议支持) |
+| **错误处理** | ❌ | ✅ (结构化错误返回) |
+
+### 2. 与 Python 版本 (codexmcp) 对比
 
 | 特性 | Go 版本 (codex-mcp-go) | Python 版本 (codexmcp) |
 |------|------------------------|----------------------|
@@ -186,6 +212,12 @@ echo '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' | ./codex-mcp-
 *   **连接失败**：检查 `codex` CLI 是否在 PATH 中，或确认 Go 版本 >= 1.24。
 *   **无权限**：检查二进制文件是否有执行权限 (`chmod +x`)。
 *   **Session 丢失**：确保客户端正确传递了上一次调用返回的 `SESSION_ID`。
+
+---
+
+## 开源协议
+
+本项目采用 [MIT License](./LICENSE) 开源协议。
 
 ---
 

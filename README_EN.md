@@ -28,7 +28,21 @@ Key Features:
 
 ## Quick Start
 
-### 1. Build
+### 1. Prerequisites
+
+This tool relies on OpenAI's `codex` CLI. Please ensure you have installed and configured it.
+
+**Install Codex CLI:**
+
+```bash
+# Install via npm (Recommended)
+npm i -g @openai/codex
+
+# Or refer to the official repository
+# https://github.com/openai/codex-cli
+```
+
+### 2. Build
 
 Requires Go 1.24+.
 
@@ -38,7 +52,7 @@ cd codex-mcp-go
 go build -o codex-mcp-go cmd/server/main.go
 ```
 
-### 2. Configure MCP Client
+### 3. Configure MCP Client
 
 Choose the configuration method based on your AI client.
 
@@ -120,7 +134,7 @@ For other MCP-compatible clients:
 ```
 </details>
 
-### 3. Verify
+### 4. Verify
 
 ```bash
 echo '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' | ./codex-mcp-go
@@ -148,7 +162,19 @@ Tool Name: `codex`
 
 ---
 
-## Version Comparison (Go vs Python)
+## Feature Comparison
+
+### 1. vs Official Codex CLI
+
+| Feature | Official Codex CLI | CodexMCP (This Tool) |
+|---------|--------------------|----------------------|
+| **Basic Codex Call** | ✅ | ✅ |
+| **Multi-turn Chat** | ❌ | ✅ (via Session Management) |
+| **Reasoning Trace** | ❌ | ✅ (Full Log Capture) |
+| **Parallel Tasks** | ❌ | ✅ (MCP Protocol Support) |
+| **Error Handling** | ❌ | ✅ (Structured Error Return) |
+
+### 2. vs Python Version (codexmcp)
 
 | Feature | Go Version (codex-mcp-go) | Python Version (codexmcp) |
 |---------|---------------------------|---------------------------|
@@ -165,6 +191,12 @@ Tool Name: `codex`
 *   **Connection Failed**: Check if `codex` CLI is in PATH, or verify Go version >= 1.24.
 *   **Permission Denied**: Check if the binary has execution permissions (`chmod +x`).
 *   **Session Lost**: Ensure the client correctly passes the `SESSION_ID` returned from the previous call.
+
+---
+
+## License
+
+This project is licensed under the [MIT License](./LICENSE).
 
 ---
 
