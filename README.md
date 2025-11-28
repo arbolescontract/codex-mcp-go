@@ -17,6 +17,7 @@
 ## 简介
 
 `codex-mcp-go` 是一个基于 Go 语言实现的 MCP (Model Context Protocol) 服务器。它封装了 OpenAI 的 Codex CLI，使其能够作为 MCP 工具被 Claude Code、Roo Code、KiloCode 等 AI 客户端调用。
+codex 在细节和 bug 修复方面的能力有目共睹, 但是很多时候用起来会感觉稍微缺乏全局视野, 所以我目前的工作流是使用 gemini 3.0 pro 的 kilocode 作为主要的规划者, codex 可以负责复杂功能的落地和 bug 修复
 
 主要特性：
 - **会话管理**：支持 `SESSION_ID` 维持多轮对话上下文。
