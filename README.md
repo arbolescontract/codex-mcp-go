@@ -195,9 +195,21 @@ EOF
 
 为了获得最佳体验，建议根据您使用的客户端类型配置相应的系统提示词。
 
-### 1. 智能体模式
+### 1. 智能体模式 (KiloCode / Roo Code / Cline / Claude Code)
 
-适用于能够自主规划和执行多步任务的 Agent。请将以下内容添加到您的 Agent 配置或作为任务的初始指令：
+适用于能够自主规划和执行多步任务的 Agent。
+
+**对于 KiloCode / Roo Code / Cline 用户：**
+本项目提供了针对不同客户端的预配置专家模式文件。请根据您使用的客户端选择对应的文件导入：
+
+*   **KiloCode**: [`codex-engineer-kilocode.yaml`](./codex-engineer-kilocode.yaml)
+*   **Roo Code**: [`codex-engineer-roocode.yaml`](./codex-engineer-roocode.yaml)
+*   **Cline**: [`codex-engineer-cline.yaml`](./codex-engineer-cline.yaml)
+
+导入后，您将获得经过调优的 "Codex 协作专家" 模式，该模式已针对您的客户端进行了身份认同适配。
+
+**对于 Claude Code 或手动配置：**
+请将以下内容添加到您的 Agent 配置或作为任务的初始指令：
 
 <details>
 <summary><strong>点击展开详细提示词</strong></summary>

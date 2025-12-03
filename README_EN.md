@@ -176,9 +176,21 @@ The MCP handshake requires `initialize` before `tools/list`. If the response con
 
 To get the best experience, it is recommended to configure the appropriate system prompt based on the client type you are using.
 
-### 1. Agent Mode
+### 1. Agent Mode (KiloCode / Roo Code / Cline / Claude Code)
 
-Suitable for Agents capable of autonomous planning and execution of multi-step tasks. Add the following to your Agent configuration or as the initial instruction for the task:
+Suitable for Agents capable of autonomous planning and execution of multi-step tasks.
+
+**For KiloCode / Roo Code / Cline Users:**
+This project provides pre-configured expert mode files tailored for different clients. Please choose the corresponding file to import based on your client:
+
+*   **KiloCode**: [`codex-engineer-kilocode.yaml`](./codex-engineer-kilocode.yaml)
+*   **Roo Code**: [`codex-engineer-roocode.yaml`](./codex-engineer-roocode.yaml)
+*   **Cline**: [`codex-engineer-cline.yaml`](./codex-engineer-cline.yaml)
+
+After importing, you will get the tuned "Codex Collaboration Expert" mode, which has been adapted for your client's identity.
+
+**For Claude Code or Manual Configuration:**
+Add the following to your Agent configuration or as the initial instruction for the task:
 
 <details>
 <summary><strong>Click to expand detailed prompt</strong></summary>
