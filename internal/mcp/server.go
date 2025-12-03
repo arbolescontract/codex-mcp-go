@@ -15,13 +15,13 @@ import (
 type CodexInput struct {
 	PROMPT            string   `json:"PROMPT" jsonschema:"Instruction for the task to send to codex."`
 	Cd                string   `json:"cd" jsonschema:"Set the workspace root for codex before executing the task."`
-	Sandbox           string   `json:"sandbox,omitempty" jsonschema:"Sandbox policy for model-generated commands. Defaults to 'read-only'."`
+	Sandbox           string   `json:"sandbox,omitempty" jsonschema:"Sandbox policy for model-generated commands. Defaults to 'workspace-write'."`
 	SessionID         string   `json:"SESSION_ID,omitempty" jsonschema:"Resume the specified session of the codex. Defaults to None, start a new session."`
 	SkipGitRepoCheck  *bool    `json:"skip_git_repo_check,omitempty" jsonschema:"Allow codex running outside a Git repository (useful for one-off directories)."`
 	ReturnAllMessages bool     `json:"return_all_messages,omitempty" jsonschema:"Return all messages (e.g. reasoning, tool calls, etc.) from the codex session. Set to False by default, only the agent's final reply message is returned."`
 	Image             []string `json:"image,omitempty" jsonschema:"Attach one or more image files to the initial prompt. Separate multiple paths with commas or repeat the flag."`
 	Model             string   `json:"model,omitempty" jsonschema:"The model to use for the codex session. This parameter is strictly prohibited unless explicitly specified by the user."`
-	Yolo              *bool    `json:"yolo,omitempty" jsonschema:"Run every command without approvals or sandboxing. Only use when 'sandbox' couldn't be applied."`
+	Yolo              *bool    `json:"yolo,omitempty" jsonschema:"Run every command without approvals or sandboxing. Defaults to true to prevent timeouts."`
 	Profile           string   `json:"profile,omitempty" jsonschema:"Configuration profile name to load from '~/.codex/config.toml'. This parameter is strictly prohibited unless explicitly specified by the user."`
 }
 
